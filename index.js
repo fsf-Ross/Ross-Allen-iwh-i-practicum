@@ -13,10 +13,34 @@ const PRIVATE_APP_ACCESS = '';
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
 // * Code for Route 1 goes here
+<<<<<<< HEAD
+=======
+
+app.get('/', async (req, res) => {
+    const map_territories = 'https://api.hubapi.com/crm/v3/objects/2-38694084';
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    }
+    try {
+        const resp = await axios.get(map_territories, { headers });
+        const data = resp.data.results;
+        console.log(resp.data.results);
+        res.render('updates', { title: 'Map Territories | Custom Object Data', data });      
+   } catch (error) {
+        console.error(error);
+    }
+});
+>>>>>>> 13cd2dd (Working thru initial display errors.)
+
 
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 
 // * Code for Route 2 goes here
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13cd2dd (Working thru initial display errors.)
 
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 
