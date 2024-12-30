@@ -1,0 +1,23 @@
+doctype
+html
+    head
+        title ${title}
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+
+    body
+        h1 Map Territoriesp 
+        a(href="/update-cobj") Add to this table
+        table
+            thead
+                tr
+                    th Name
+                    th Status
+                    th Assigned To
+            tbody
+                each map_territory in data
+                    tr
+                        td= map_territory.properties.territory_name
+                        td= map_territory.properties.status
+                        td= map_territory.properties.assigned_to
+

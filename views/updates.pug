@@ -1,0 +1,23 @@
+doctype
+html
+    head
+        title ${title}
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+
+    body
+        h1 Map Territories: Updates
+        p 
+            a(href="/") Return to the homepage
+        form(action='/update-cobj', method='POST')
+            div 
+                label(for='territory_name') Name:
+                input(type='text', id='territory_name', name='territory_name' required)
+            div 
+                label(for='status') Status:
+                input(type='text', id='status', name='status' required)
+            div 
+                label(for='assigned_to') Assigned To:
+                input(type='text', id='assigned_to', name='assigned_to' required)
+            div
+                button(type='submit') Submit
